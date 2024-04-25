@@ -6,8 +6,6 @@ var guitar
 var flute
 
 
-var audio_source
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -49,3 +47,5 @@ func _on_button_4_pressed():
 	
 	print("flute is playing a note")
 	pass # Replace with function body.
+
+

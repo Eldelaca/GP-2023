@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b06wpfgs124d3"]
+[gd_scene load_steps=7 format=3 uid="uid://b06wpfgs124d3"]
 
 [ext_resource type="Script" path="res://controller.gd" id="1_yxwl5"]
 [ext_resource type="AudioStream" path="res://68437__pinkyfinger__piano-a.wav" id="3_goyty"]
 [ext_resource type="AudioStream" path="res://597804__stoltingmediagroup__smg_sound_drum_hat_0117584636.wav" id="3_ucb6t"]
 [ext_resource type="AudioStream" path="res://109983__keider__1st_string_open_d.wav" id="4_fbxm5"]
 [ext_resource type="AudioStream" path="res://176865__tapepusher__flute1.wav" id="5_2bmhd"]
+[ext_resource type="Script" path="res://drumSound.gd" id="6_kajdo"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,45 +18,147 @@ grow_vertical = 2
 script = ExtResource("1_yxwl5")
 
 [node name="Button" type="Button" parent="."]
+modulate = Color(0, 0.709804, 0.960784, 1)
 layout_mode = 0
 offset_left = 2.0
 offset_top = 186.0
 offset_right = 496.0
 offset_bottom = 426.0
-text = "Drum Kick"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button"]
 stream = ExtResource("3_ucb6t")
+bus = &"Drum"
 
 [node name="Button2" type="Button" parent="."]
+modulate = Color(0.823529, 0, 0.54902, 1)
+self_modulate = Color(0.968627, 0.968627, 0.968627, 1)
 offset_left = 518.0
 offset_top = 192.0
 offset_right = 1012.0
 offset_bottom = 432.0
-text = "Piano Note"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Button2"]
 stream = ExtResource("3_goyty")
+bus = &"Piano"
 
 [node name="Button3" type="Button" parent="."]
+modulate = Color(0.0509804, 1, 0, 1)
 offset_left = 10.0
 offset_top = 531.0
 offset_right = 504.0
 offset_bottom = 771.0
-text = "Guitar String"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Button3"]
 stream = ExtResource("4_fbxm5")
+bus = &"Guitar"
 
 [node name="Button4" type="Button" parent="."]
+modulate = Color(1, 1, 0, 1)
 offset_left = 521.0
-offset_top = 531.0
+offset_top = 539.0
 offset_right = 1015.0
-offset_bottom = 771.0
-text = "Flute Note"
+offset_bottom = 779.0
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Button4"]
 stream = ExtResource("5_2bmhd")
+bus = &"Flute"
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 444.0
+offset_right = 424.0
+offset_bottom = 460.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("6_kajdo")
+bus_name = "Drum"
+
+[node name="HSlider2" type="HSlider" parent="."]
+offset_left = 573.0
+offset_top = 446.0
+offset_right = 941.0
+offset_bottom = 462.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("6_kajdo")
+bus_name = "Piano"
+
+[node name="HSlider3" type="HSlider" parent="."]
+offset_left = 71.0
+offset_top = 804.0
+offset_right = 439.0
+offset_bottom = 820.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("6_kajdo")
+bus_name = "Guitar"
+
+[node name="HSlider4" type="HSlider" parent="."]
+offset_left = 575.0
+offset_top = 805.0
+offset_right = 943.0
+offset_bottom = 821.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("6_kajdo")
+bus_name = "Flute"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = -7.0
+offset_right = 492.0
+offset_bottom = 87.0
+scale = Vector2(2.15143, 2.30594)
+text = "Sound Board"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+visible_ratio = -0.0909091
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 247.0
+offset_right = 145.0
+offset_bottom = 270.0
+scale = Vector2(5.71643, 4.69473)
+text = "DRUMS"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 594.0
+offset_top = 254.0
+offset_right = 652.0
+offset_bottom = 277.0
+scale = Vector2(5.71643, 4.69473)
+text = "PIANO"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 79.0
+offset_top = 598.0
+offset_right = 137.0
+offset_bottom = 621.0
+scale = Vector2(5.71643, 4.69473)
+text = "GUITAR
+"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 603.0
+offset_top = 593.0
+offset_right = 662.0
+offset_bottom = 616.0
+scale = Vector2(5.71643, 4.69473)
+text = "FLUTE
+"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
