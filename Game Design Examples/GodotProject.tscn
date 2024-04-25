@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://btfq0dwyuherv"]
+[gd_scene load_steps=6 format=3 uid="uid://b06wpfgs124d3"]
 
 [ext_resource type="Script" path="res://controller.gd" id="1_yxwl5"]
-[ext_resource type="AudioStream" uid="uid://bwib4wmsmxtox" path="res://68437__pinkyfinger__piano-a.wav" id="3_goyty"]
-[ext_resource type="AudioStream" uid="uid://o0iexcflhip5" path="res://597804__stoltingmediagroup__smg_sound_drum_hat_0117584636.wav" id="3_ucb6t"]
-[ext_resource type="AudioStream" uid="uid://gvkt0waltba2" path="res://109983__keider__1st_string_open_d.wav" id="4_fbxm5"]
-[ext_resource type="AudioStream" uid="uid://dula3j61t05yd" path="res://176865__tapepusher__flute1.wav" id="5_2bmhd"]
+[ext_resource type="AudioStream" path="res://68437__pinkyfinger__piano-a.wav" id="3_goyty"]
+[ext_resource type="AudioStream" path="res://597804__stoltingmediagroup__smg_sound_drum_hat_0117584636.wav" id="3_ucb6t"]
+[ext_resource type="AudioStream" path="res://109983__keider__1st_string_open_d.wav" id="4_fbxm5"]
+[ext_resource type="AudioStream" path="res://176865__tapepusher__flute1.wav" id="5_2bmhd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
