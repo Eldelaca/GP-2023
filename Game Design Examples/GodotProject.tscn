@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://btfq0dwyuherv"]
+[gd_scene load_steps=6 format=3 uid="uid://btfq0dwyuherv"]
 
 [ext_resource type="Script" path="res://controller.gd" id="1_yxwl5"]
-[ext_resource type="Script" path="res://soundsource.gd" id="2_sgs1y"]
+[ext_resource type="AudioStream" uid="uid://bwib4wmsmxtox" path="res://68437__pinkyfinger__piano-a.wav" id="3_goyty"]
 [ext_resource type="AudioStream" uid="uid://o0iexcflhip5" path="res://597804__stoltingmediagroup__smg_sound_drum_hat_0117584636.wav" id="3_ucb6t"]
+[ext_resource type="AudioStream" uid="uid://gvkt0waltba2" path="res://109983__keider__1st_string_open_d.wav" id="4_fbxm5"]
+[ext_resource type="AudioStream" uid="uid://dula3j61t05yd" path="res://176865__tapepusher__flute1.wav" id="5_2bmhd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,15 +18,46 @@ script = ExtResource("1_yxwl5")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_top = 69.0
-offset_right = 494.0
-offset_bottom = 309.0
+offset_left = 2.0
+offset_top = 186.0
+offset_right = 496.0
+offset_bottom = 426.0
 text = "Drum Kick"
 
-[node name="Node2D" type="Node2D" parent="."]
-script = ExtResource("2_sgs1y")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button"]
 stream = ExtResource("3_ucb6t")
 
+[node name="Button2" type="Button" parent="."]
+offset_left = 518.0
+offset_top = 192.0
+offset_right = 1012.0
+offset_bottom = 432.0
+text = "Piano Note"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Button2"]
+stream = ExtResource("3_goyty")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 531.0
+offset_right = 504.0
+offset_bottom = 771.0
+text = "Guitar String"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Button3"]
+stream = ExtResource("4_fbxm5")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 521.0
+offset_top = 531.0
+offset_right = 1015.0
+offset_bottom = 771.0
+text = "Flute Note"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Button4"]
+stream = ExtResource("5_2bmhd")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
